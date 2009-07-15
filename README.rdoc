@@ -1,0 +1,7 @@
+= sprout-extensions
+
+Description goes here.
+
+== Copyright
+
+Copyright (c) 2009 Richie Vos. See LICENSE for details.
