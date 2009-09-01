@@ -4,7 +4,7 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "sprouts-extensions"
+    gem.name = "#{ENV['github'] ? 'jerryvos-' : ''}sprouts-extensions"
     gem.summary = %Q{Some extensions to sprout}
     gem.email = "jerry.vos@gmail.com"
     gem.homepage = "http://github.com/jerryvos/sprout-extensions"

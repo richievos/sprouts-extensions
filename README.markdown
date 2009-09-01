@@ -1,4 +1,4 @@
-sprout-extensions
+sprouts-extensions
 =============
 
 Purpose
@@ -13,20 +13,33 @@ Sprout-extensions is a set of little extensions monkey-patched into Sprout. It a
 
 * the ability to easily alias your sprout task to a simpler, namespaced version
 
-    namespace :build do
-      desc "Compile the main swf"
-      mxmlc "app.swf" do |t|
-        t.task_alias = 'main' # the alias
-      end
-    end
+        namespace :build do
+          desc "Compile the main swf"
+          mxmlc "app.swf" do |t|
+            t.task_alias = 'main' # the alias
+          end
+        end
     
-    # rake -T
-    rake app.swf    # Compile the main swf
-    rake build:main # Compile the main swf
+        # rake -T
+        rake app.swf    # Compile the main swf
+        rake build:main # Compile the main swf
 
 * smarter tracking of when a rebuild actually has to happen when your task isn't named the same as your output file
     * For the following task, sprout/rake will always rebuild the file, even if it already exists and the dependencies are up-to-date. With sprout-extension this doesn't happen
 
-        mxmlc "my_task_name" do |t|
-          t.output = "my_app.swf"
-        end
+            mxmlc "my_task_name" do |t|
+              t.output = "my_app.swf"
+            end
+
+Usage
+========
+Install with gem install jerryvos-sprouts-extensions --source=http://gems.github.com
+
+Update your Rakefile
+    require 'sprout'
+    #...
+
+    # Add this line
+    require 'sprouts-extensions'
+
+    # continue on
